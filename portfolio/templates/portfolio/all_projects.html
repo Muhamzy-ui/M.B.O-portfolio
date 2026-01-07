@@ -1,0 +1,45 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<section class="all-projects-section">
+    <div class="header-container">
+        <h1 class="section-title">All Projects</h1>
+        <p class="section-subtitle">A collection of my work, experiments, and open-source contributions.</p>
+    </div>
+
+    <div class="projects-grid">
+        {% for project in page_obj %}
+        <div class="grid-card">
+            <div class="grid-card-visual">
+                <img src="{{ project.image.url }}" alt="{{ project.title }}">
+            </div>
+            <div class="grid-card-content">
+                <h3 class="grid-project-title">{{ project.title }}</h3>
+                <div class="grid-tech-tags">
+                    {% for tech in project.get_tech_list|slice:":3" %}
+                        <span class="mini-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                <a href="{% url 'project_detail' project.pk %}" class="grid-view-btn">
+                    View Project <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if page_obj.has_other_pages %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-link">Prev</a>
+        {% endif %}
+        
+        <span class="current-page">{{ page_obj.number }}</span>
+        
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link">Next</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

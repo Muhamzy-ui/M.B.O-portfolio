@@ -1,0 +1,302 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="preloader">
+    <div class="loader-content">
+        <h1 class="loader-num italic">50</h1>
+        <div class="loader-track">
+            <div id="loader-fill"></div>
+        </div>
+    </div>
+</div>
+
+<div class="galaxy-bg">
+    <div id="tsparticles"></div>
+
+    <section id="home" class="hero-section">
+        <div class="hero-container"> <div class="hero-inner">
+                <h1 class="reveal-up hero-name">HI, I AM <span class="text-purple">M.B.O WEBDEV</span></h1>
+                <p class="hero-sub">
+                    <span id="typewriter-text"></span><span class="cursor">|</span>
+                </p>
+                
+                <div class="reveal-up social-row">
+                    <a href="#" class="icon-btn"><i data-lucide="github"></i></a>
+                    <a href="#" class="icon-btn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="btn-primary">View Resume</a>
+                </div>
+            </div>
+
+            <div class="profile-card-wrapper">
+                <div class="glass-card" id="profileCard">
+                    <div class="card-image">
+                        <img src="{% static 'portfolio/image/profile-rider.jpg' %}" alt="Mahmud Bashir Profile">
+                        <div class="card-overlay">
+                            <h3>Mahmud Bashir</h3>
+                            <br>
+                            <p>Full Stack Web-Developer</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <span class="status-dot"></span>
+                            <span>@mahmudbashir (Online)</span>
+                        </div>
+                        <a href="/contact/" class="contact-mini-btn">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> <div class="reveal-up scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    {% include 'about/about_content.html' %}
+
+
+
+
+    <section id="skills" class="skills-section">
+        <div class="title-container">
+            <h2 class="section-title">SKILLS & TECHNOLOGIES</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div id="canvas-wrapper">
+            <canvas width="800" height="800" id="skillCanvas">
+                <ul id="skillList">
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="60" alt="React"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" width="60" alt="NextJS"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="60" alt="TS"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="60" alt="Node"></a></li>
+
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="60" alt="React"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" width="60" alt="NextJS"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="60" alt="TS"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="60" alt="Node"></a></li>
+
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="60" alt="JS"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="60" alt="HTML"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="60" alt="CSS"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="60" alt="Tailwind"></a></li>
+                    
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="60" alt="JS"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="60" alt="HTML"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="60" alt="CSS"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="60" alt="Tailwind"></a></li>
+
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="60" alt="MongoDB"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="60" alt="Postgres"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="60" alt="Django"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="60" alt="Python"></a></li>
+
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="60" alt="MongoDB"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="60" alt="Postgres"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="60" alt="Django"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="60" alt="Python"></a></li>
+
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="60" alt="Git"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="60" alt="Figma"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="60" alt="Docker"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" width="60" alt="Redux"></a></li>
+
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="60" alt="Git"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="60" alt="Figma"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="60" alt="Docker"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" width="60" alt="Redux"></a></li>
+
+                                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="60" alt="Git"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="60" alt="Figma"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="60" alt="Docker"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" width="60" alt="Redux"></a></li>
+                    
+                                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="60" alt="Git"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="60" alt="Figma"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="60" alt="Docker"></a></li>
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" width="60" alt="Redux"></a></li>
+
+                    <li><a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="60" alt="Git"></a></li>
+                </ul>
+            </canvas>
+        </div>
+    </section>
+
+
+<section id="experience" class="experience-section">
+    <div class="title-container">
+        <h2 class="section-title">EXPERIENCE</h2>
+        <div class="title-underline"></div>
+    </div>
+
+    <div class="experience-grid">
+        {% for exp in experiences %}
+        <div class="experience-card"> 
+            <div class="card-header">
+                <h3 class="job-title">{{ exp.title }}</h3>
+                <p class="company-name">{{ exp.company }}</p>
+            </div>
+            
+            <div class="logo-container">
+                {% if exp.logo %}
+                    <img src="{{ exp.logo.url }}" alt="{{ exp.company }} Logo">
+                {% endif %}
+            </div>
+
+            <div class="card-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>{{ exp.location }}</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>{{ exp.start_date }} – {{ exp.end_date }}</span>
+                </div>
+            </div>
+
+            <a href="{% url 'experience_detail' exp.pk %}" class="view-details-btn">
+                <i class="fas fa-briefcase"></i> View Work Details
+            </a>
+        </div>
+        {% empty %}
+            <p style="color: white; text-align: center; grid-column: 1/-1;">No experiences found in database.</p>
+        {% endfor %}
+    </div>
+
+    <div class="history-button-container">
+    <a href="{% url 'all_experience' %}" class="view-history-btn">View Entire Work History</a>
+</div>
+</section>
+
+
+<section class="projects-section" id="projects">
+    <h2 class="section-title">PROJECTS</h2>
+
+    <div class="project-stack-container">
+        {% for project in projects %}
+        <div class="project-card-stacked">
+            <div class="project-inner">
+
+                <div class="project-header">
+                    <h3 class="project-name">{{ project.title }}</h3>
+                    <div class="tech-tags">
+                        {% for tech in project.get_tech_list %}
+                            <span class="tag-pill">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="project-visual">
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                </div>
+
+                <div class="project-footer">
+                    <p class="project-summary">{{ project.description }}</p>
+
+                    <div class="btn-group">
+                        <a href="{% url 'project_detail' project.pk %}" class="btn-action btn-dark">
+                            View Details
+                        </a>
+                        <a href="{{ project.live_link }}" target="_blank" class="btn-action btn-white">
+                            Live Project
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="view-all-container">
+        <a href="{% url 'all_projects' %}" class="btn-view-all">
+            <span>View All Projects</span>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    </div>
+</section>
+
+<section class="services-section" id="services">
+    <h2 class="section-title">SERVICES</h2>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-header">
+                <div class="service-icon-box">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="service-title">Web Development & Design</h3>
+            </div>
+            <p class="service-intro">Building responsive, modern websites and applications that work across all devices and browsers.</p>
+            <ul class="service-list">
+                <li>Custom website & application development</li>
+                <li>UI/UX implementation</li>
+                <li>Responsive design for all devices</li>
+                <li>Performance optimization</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <div class="service-header">
+                <div class="service-icon-box">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="service-title">SEO Optimization</h3>
+            </div>
+            <p class="service-intro">Improving your website's visibility in search engines to drive more organic traffic and reach more customers.</p>
+            <ul class="service-list">
+                <li>Technical SEO audits</li>
+                <li>Performance & accessibility improvement</li>
+                <li>Content optimization strategies</li>
+                <li>SEO-friendly web development</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <div class="service-header">
+                <div class="service-icon-box">
+                    <i class="fas fa-pen-nib"></i>
+                </div>
+                <h3 class="service-title">Technical Consulting & Writing</h3>
+            </div>
+            <p class="service-intro">Sharing expertise through documentation, articles, and direct consulting to help teams build better web products.</p>
+            <ul class="service-list">
+                <li>Technical documentation</li>
+                <li>Developer-focused technical articles</li>
+                <li>Code reviews & architecture advice</li>
+                <li>Technology selection guidance</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="schedule-section" id="booking">
+    <div class="calendar-card-container">
+        <h2 class="section-title">SCHEDULE A CALL</h2>
+        
+        <div class="calendar-matte-card">
+            <div id="my-cal-inline-30min" class="cal-embed-container"></div>
+            
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+              
+              Cal("init", "30min", {origin:"https://app.cal.com"});
+
+              Cal.ns["30min"]("inline", {
+                elementOrSelector:"#my-cal-inline-30min",
+                config: {"layout":"month_view", "theme": "dark"},
+                calLink: "mojisola-ayoke-qf1dtm/30min",
+              });
+
+              Cal.ns["30min"]("ui", {
+                  "theme": "dark",
+                  "hideEventTypeDetails": false,
+                  "layout": "month_view"
+              });
+            </script>
+        </div>
+    </div>
+</section>
+
+</div>
+{% endblock %}

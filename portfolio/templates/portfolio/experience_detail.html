@@ -1,0 +1,39 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<section class="detail-page">
+    <div class="detail-card">
+        <div class="detail-header-flex">
+            <div class="detail-logo-box">
+                <img src="{{ experience.logo.url }}" alt="{{ experience.company }} Logo">
+            </div>
+
+            <div class="header-text">
+                <h1>{{ experience.title }}</h1>
+                <h2 class="company-accent">{{ experience.company }}</h2>
+                <div class="meta-info-row">
+                    <span><i class="fas fa-map-marker-alt"></i> {{ experience.location }}</span>
+                    <span class="dot-separator">•</span>
+                    <span><i class="fas fa-calendar-alt"></i> {{ experience.start_date }} – {{ experience.end_date }}</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="detail-body">
+            {% if experience.summary %}
+                <h3 class="summary-highlight">"{{ experience.summary }}"</h3>
+            {% endif %}
+            
+            <div class="description-text">
+                {{ experience.description|linebreaks }}
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="/" class="view-history-btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

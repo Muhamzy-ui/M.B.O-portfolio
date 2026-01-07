@@ -1,0 +1,46 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<section class="detail-page">
+    <div class="detail-card">
+        <div class="detail-header">
+            <h1 class="project-main-title">{{ project.title }}</h1>
+            <div class="tech-pills-container">
+                {% for tech in project.get_tech_list %}
+                    <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="project-hero-container">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}" class="hero-img">
+        </div>
+
+        <div class="meta-row">
+            <span class="date-badge">
+                <i class="far fa-calendar-alt"></i> September 2025 – Present
+            </span>
+            {% if project.live_link %}
+            <a href="{{ project.live_link }}" target="_blank" class="live-link-btn">
+                <i class="fas fa-external-link-alt"></i> Live Preview
+            </a>
+            {% endif %}
+        </div>
+
+        <hr class="divider">
+
+        <div class="detail-body">
+            <h3 class="overview-title">Overview</h3>
+            <div class="description-text">
+                {{ project.description|linebreaks }}
+            </div>
+        </div>
+
+        <div class="details-footer">
+            <a href="/" class="back-link-btn">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

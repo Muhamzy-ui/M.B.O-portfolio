@@ -1,0 +1,57 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<section class="experience-section">
+    <div class="title-container">
+        <h2 class="section-title">Work History</h2>
+        <div class="title-underline"></div>
+    </div>
+
+    <div class="experience-grid">
+        {% for exp in page_obj %}
+        <div class="experience-card is-visible"> <div class="card-header">
+                <h3 class="job-title">{{ exp.title }}</h3>
+                <p class="company-name">{{ exp.company }}</p>
+            </div>
+            
+            <div class="logo-container">
+                <img src="{{ exp.logo.url }}" alt="Logo">
+            </div>
+
+            <div class="card-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>{{ exp.location }}</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>{{ exp.start_date }} – {{ exp.end_date }}</span>
+                </div>
+            </div>
+
+            <a href="{% url 'experience_detail' exp.pk %}" class="view-details-btn">
+                <i class="fas fa-briefcase"></i> View Work Details
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="pagination-container">
+        <div class="pagination-bar">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}" class="pag-btn">&lt; Previous</a>
+            {% else %}
+                <span class="pag-btn disabled">&lt; Previous</span>
+            {% endif %}
+
+            <span class="current-page">{{ page_obj.number }}</span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="pag-btn">Next &gt;</a>
+            {% else %}
+                <span class="pag-btn disabled">Next &gt;</span>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
