@@ -97,15 +97,12 @@ DATABASES = {
 STATIC_URL = '/static/'
 
 # Where Django looks for extra static files (your project-level static folder)
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # <-- Correct path
-]
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-# Where collectstatic copies everything for production
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Whitenoise compressed storage
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# For Whitenoise
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # -------------------------------
 # MEDIA FILES

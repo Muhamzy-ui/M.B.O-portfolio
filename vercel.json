@@ -16,14 +16,7 @@
       "dest": "core/wsgi.py"
     }
   ],
-  "build": {
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "core.settings"
-    },
-    "commands": [
-      "python -m pip install --upgrade pip",
-      "pip install -r requirements.txt",
-      "python manage.py collectstatic --noinput"
-    ]
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "core.settings"
   }
 }
