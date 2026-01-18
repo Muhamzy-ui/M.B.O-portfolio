@@ -13,27 +13,23 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 
-# --------------------------------------------------
+# -------------------------------
 # BASE DIRECTORY
-# --------------------------------------------------
+# -------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# --------------------------------------------------
+# -------------------------------
 # SECURITY
-# --------------------------------------------------
-SECRET_KEY = 'django-insecure-er3e6+n@6a4b&-m16jiqzs&xsew35ww6c2auvfq^q2d1!j+hn6'
-
+# -------------------------------
+SECRET_KEY = 'your-secret-key'
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
-
-# --------------------------------------------------
-# APPLICATIONS
-# --------------------------------------------------
+# -------------------------------
+# INSTALLED APPS
+# -------------------------------
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',  # For serving static files in production
+    'whitenoise.runserver_nostatic',  # serve static files in dev
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,18 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Local apps
+    # your apps
     'portfolio',
     'about',
 ]
 
-
-# --------------------------------------------------
+# -------------------------------
 # MIDDLEWARE
-# --------------------------------------------------
+# -------------------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # For serving static files in production
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # serve static in production
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,24 +56,19 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
-# --------------------------------------------------
+# -------------------------------
 # URLS / WSGI
-# --------------------------------------------------
+# -------------------------------
 ROOT_URLCONF = 'core.urls'
-
 WSGI_APPLICATION = 'core.wsgi.application'
 
-
-# --------------------------------------------------
+# -------------------------------
 # TEMPLATES
-# --------------------------------------------------
+# -------------------------------
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'portfolio' / 'templates',
-        ],
+        'DIRS': [BASE_DIR / 'portfolio' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,10 +81,9 @@ TEMPLATES = [
     },
 ]
 
-
-# --------------------------------------------------
+# -------------------------------
 # DATABASE
-# --------------------------------------------------
+# -------------------------------
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -102,59 +91,29 @@ DATABASES = {
     }
 }
 
-
-# --------------------------------------------------
-# PASSWORD VALIDATION
-# --------------------------------------------------
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-
-
-# --------------------------------------------------
-# INTERNATIONALIZATION
-# --------------------------------------------------
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-USE_TZ = True
-
-
-# --------------------------------------------------
+# -------------------------------
 # STATIC FILES
-# --------------------------------------------------
+# -------------------------------
 STATIC_URL = '/static/'
 
-# Where Django will look for your custom static files
+# Where Django looks for extra static files (your project-level static folder)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / 'static',  # <-- Correct path
 ]
 
-# Where collectstatic will collect everything
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Where collectstatic copies everything for production
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+# Whitenoise compressed storage
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# --------------------------------------------------
+# -------------------------------
 # MEDIA FILES
-# --------------------------------------------------
+# -------------------------------
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / 'media'
 
-
-# --------------------------------------------------
+# -------------------------------
 # DEFAULT PRIMARY KEY
-# --------------------------------------------------
+# -------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
